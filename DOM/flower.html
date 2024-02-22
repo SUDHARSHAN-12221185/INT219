@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* Style for the flower */
+        .flower {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background-color: #f9c542;
+            border-radius: 50%;
+        }
+
+        /* Style for the petals */
+        .petal {
+            position: absolute;
+            width: 30px;
+            height: 60px;
+            background-color: #ff6b6b;
+            transform-origin: 50% 100%;
+        }
+
+        /* Positioning the petals */
+        .petal:nth-child(1) { transform: rotate(30deg); }
+        .petal:nth-child(2) { transform: rotate(90deg); }
+        .petal:nth-child(3) { transform: rotate(150deg); }
+        .petal:nth-child(4) { transform: rotate(210deg); }
+        .petal:nth-child(5) { transform: rotate(270deg); }
+        .petal:nth-child(6) { transform: rotate(330deg); }
+
+        /* Style for the bud (center) */
+        .bud {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ffcc29;
+            border-radius: 50%;
+            top: 40px;
+            left: 40px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="flower">
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="petal"></div>
+        <div class="bud" onclick="changePetalColor()"></div>
+    </div>
+
+    <script>
+        function getRandomColor() {
+            const colors = ['#ff6b6b', '#ffcc29', '#a0d468', '#48cfad', '#4fc1e9', '#ac92ec'];
+            return colors[Math.floor(Math.random() * colors.length)];
+        }
+
+        function changePetalColor() {
+            const petals = document.querySelectorAll('.petal');
+            const randomPetalIndex = Math.floor(Math.random() * petals.length);
+            petals[randomPetalIndex].style.backgroundColor = getRandomColor();
+        }
+    </script>
+</body>
+</html>

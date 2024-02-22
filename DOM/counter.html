@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      #one {
+        height: 60px;
+      }
+    </style>
+  </head>
+  <body>
+    <button id="btn">click</button>
+
+    <div id="one"></div>
+
+    <button id="stop">stop</button>
+
+    <script>
+      let text = document.querySelector("#one");
+      let btn = document.querySelector("#btn");
+      let sbtn = document.querySelector("#stop");
+
+      let counter = 0;
+
+      btn.addEventListener("click", counter1);
+
+      function counter1() {
+        document.querySelector("#one").innerHTML = `${counter}`;
+        counter++;
+      }
+
+      //to color change
+      //
+      const colorChange = (e) => {
+        e.style.color = "green";
+      };
+
+      btn.addEventListener("mouseover", () => {
+        colorChange(one);
+      });
+
+      //func 3
+
+      const colorChange1 = (e) => {
+        e.style.color = "black";
+      };
+      btn.addEventListener("mouseout", () => {
+        colorChange1(one);
+      });
+
+      sbtn.addEventListener("click", () => {
+        btn.removeEventListener("click", counter1);
+      });
+
+      let para1 = document.createElement("p");
+      para1.textContent = "end of the file";
+      text.appendChild(para1);
+    </script>
+  </body>
+</html>

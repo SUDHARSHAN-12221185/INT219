@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img
+      id="arya"
+      src="https://qph.cf2.quoracdn.net/main-qimg-cfb24b0140493137742ccb8fa90ae765-lq"
+      alt="photo of aryabhata"
+    />
+
+    <img
+      id="newton"
+      src="https://cdn.britannica.com/56/59856-050-AAA3AA05/Godfrey-Kneller-Isaaac-Newton-oil-painting-National-1702.jpg?w=400&h=300&c=crop"
+      alt="newton"
+    />
+    <br />
+    <br />
+    <iframe id="frame" src="" frameborder="1" width="600" height="300"></iframe>
+
+    <script>
+      let arya = document.querySelector("#arya");
+      let newton = document.querySelector("#newton");
+      let frame = document.querySelector("#frame");
+      arya.addEventListener("click", () => {
+        frame.setAttribute("src", "https://en.wikipedia.org/wiki/Aryabhata");
+      });
+      newton.addEventListener("click", () => {
+        frame.setAttribute("src", "https://en.wikipedia.org/wiki/Isaac_Newton");
+      });
+    </script>
+  </body>
+</html>

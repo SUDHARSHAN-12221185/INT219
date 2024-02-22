@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 30px;
+      }
+      .light {
+        height: 200px;
+        width: 200px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+      #btn {
+        font-size: 30x;
+        width: 80px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="light"></div>
+    <button id="btn">on</button>
+
+    <script>
+      let area = document.querySelector(".light");
+      let btn = document.querySelector("#btn");
+
+      btn.addEventListener("click", () => {
+        if (area.style.backgroundColor === "orange") {
+          area.style.backgroundColor = "white";
+          btn.textContent = "on";
+        } else {
+          area.style.backgroundColor = "orange";
+          btn.textContent = "off";
+        }
+      });
+    </script>
+  </body>
+</html>

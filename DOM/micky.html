@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mickey Mouse</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .circle {
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        border: 1px solid black;
+      }
+      #head {
+        position: relative;
+        width: 200px;
+        height: 200px;
+      }
+      #ear-left,
+      #ear-right {
+        position: absolute;
+        top: -65px;
+      }
+      #ear-left {
+        left: -50px;
+      }
+      #ear-right {
+        right: -50px;
+      }
+      #eye-left,
+      #eye-right {
+        position: absolute;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        border: 1px solid black;
+        top: 50px;
+      }
+      #eye-left {
+        left: 20px;
+      }
+      #eye-right {
+        right: 20px;
+      }
+      #nose {
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        border-radius: 50%;
+        border: 1px solid black;
+        top: 100px;
+        left: 70px;
+        
+      }
+    </style>
+  </head>
+  <body>
+    <div id="head" class="circle">
+      <div id="ear-left" class="circle"></div>
+      <div id="ear-right" class="circle"></div>
+      <div id="eye-left" class="circle"></div>
+      <div id="eye-right" class="circle"></div>
+      <div id="nose" class="circle"></div>
+    </div>
+
+    <button id="btn1">change eye color</button>
+    <button id="btn2">change nose color</button>
+
+    <script>
+      let btn1 = document.querySelector("#btn1");
+      let btn2 = document.querySelector("#btn2");
+      let left = document.querySelector("#ear-left");
+      let right = document.querySelector("#ear-right");
+      let eyeleft = document.querySelector("#eye-left");
+      let eyeright = document.querySelector("#eye-right");
+      let nose = document.querySelector("#nose");
+      let head = document.querySelector('#head')
+
+      left.addEventListener("click", () => {
+        right.style.backgroundColor = "black";
+      });
+
+      right.addEventListener("click", () => {
+        left.style.backgroundColor = "black";
+      });
+
+      btn1.addEventListener("click", () => {
+        eyeleft.style.backgroundColor = "black";
+        eyeright.style.backgroundColor = "black";
+      });
+      btn2.addEventListener("click", () => {
+        nose.style.backgroundColor = "black";
+      });
+
+      head.addEventListener('click',()=>{
+        head.style.backgroundColor = "beige";
+      })
+
+
+    </script>
+  </body>
+</html>

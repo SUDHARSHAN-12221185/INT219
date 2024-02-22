@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Basic Calculator</title>
+<style>
+.calculator {
+  width: 300px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+input, button {
+  margin: 5px;
+  padding: 8px;
+}
+
+.buttons {
+  margin-bottom: 10px;
+}
+
+#result {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+</style>
+</head>
+<body>
+
+<div class="calculator">
+  <input type="text" id="input1" placeholder="Enter first number">
+  <input type="text" id="input2" placeholder="Enter second number">
+  <div class="buttons">
+    <button id="add">Add</button>
+    <button id="subtract">Subtract</button>
+    <button id="multiply">Multiply</button>
+    <button id="divide">Divide</button>
+  </div>
+  <div id="result"></div>
+</div>
+
+<script>
+    // Function to add two numbers
+function add() {
+  const num1 = parseFloat(document.getElementById('input1').value);
+  const num2 = parseFloat(document.getElementById('input2').value);
+  const result = num1 + num2;
+  document.getElementById('result').innerText = 'Result: ' + result;
+}
+
+// Function to subtract two numbers
+function subtract() {
+  const num1 = parseFloat(document.getElementById('input1').value);
+  const num2 = parseFloat(document.getElementById('input2').value);
+  const result = num1 - num2;
+  document.getElementById('result').innerText = 'Result: ' + result;
+}
+
+// Function to multiply two numbers
+function multiply() {
+  const num1 = parseFloat(document.getElementById('input1').value);
+  const num2 = parseFloat(document.getElementById('input2').value);
+  const result = num1 * num2;
+  document.getElementById('result').innerText = 'Result: ' + result;
+}
+
+// Function to divide two numbers
+function divide() {
+  const num1 = parseFloat(document.getElementById('input1').value);
+  const num2 = parseFloat(document.getElementById('input2').value);
+  if (num2 === 0) {
+    document.getElementById('result').innerText = 'Cannot divide by zero!';
+  } else {
+    const result = num1 / num2;
+    document.getElementById('result').innerText = 'Result: ' + result;
+  }
+}
+
+// Adding event listeners to buttons
+document.getElementById('add').addEventListener('click', add);
+document.getElementById('subtract').addEventListener('click', subtract);
+document.getElementById('multiply').addEventListener('click', multiply);
+document.getElementById('divide').addEventListener('click', divide);
+
+</script>
+</body>
+</html>

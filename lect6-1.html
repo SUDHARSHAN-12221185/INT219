@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Window Open and Close events</h2>
+    <button id="btn1" onclick="opening()">Open Window</button>
+    <button id="btn2" onclick="closing()">Close Window</button>
+
+    <script>
+        var a; 
+
+        function opening() {
+            var screenWidth = window.screen.availWidth;
+            var screenHeight = window.screen.availHeight;
+            var windowWidth = 200; 
+            var windowHeight = 200; 
+
+            var leftPosition = (screenWidth - windowWidth) / 2;
+            var topPosition = (screenHeight - windowHeight) / 2;
+
+            a = window.open('http://google.com', '', 'width=200px,height=200px,left=' + leftPosition + ',top=' + topPosition);
+        }
+
+        function closing() {
+            if (a) { 
+                a.close();
+            } else {
+                alert("No window to close!");
+            }
+        }
+    </script>
+</body>
+</html>

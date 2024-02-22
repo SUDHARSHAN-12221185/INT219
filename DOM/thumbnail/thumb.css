@@ -1,0 +1,27 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.thumbnail {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid black;
+  height: 300px;
+  width: 40%;
+  box-shadow: 2px 2px 2px black;
+  margin: 50px;
+}
+
+.container {
+  display: flex;
+  gap: 25px;
+}
+
+.container img {
+  border: 1px solid black;
+  box-shadow: 2px 2px 2px green;
+}
