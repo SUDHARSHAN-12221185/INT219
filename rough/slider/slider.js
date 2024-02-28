@@ -32,3 +32,6 @@ function prevSlide() {
 
 prevBtn.addEventListener('click', prevSlide);
 nextBtn.addEventListener('click', nextSlide);
+
+//create a image and a button the image would be of aryabath and the button name will be table / factotrail 
+// when ever you care applying add event listner onthe button the image of aryabath will dissapear at the plaace table is dispalyed and when you clicked table will be dissapered an dfactorial will be displayed

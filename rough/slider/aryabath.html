@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <img src="https://th.bing.com/th?id=OIP.blq5Ic5N8_W49XyXLLhvQQHaIt&w=230&h=271&c=8&rs=1&qlt=90&o=6&pid=3.1&rm=2" alt="">
+        <div class="table" style="display: none;"></div>
+        <div class="fac" style="display: none;"></div>
+        <button>Table</button>
+    </div>
+
+    <script>
+        const img = document.querySelector('img');
+        const table = document.querySelector('.table');
+        const fac = document.querySelector('.fac');
+        const btn = document.querySelector('button');
+
+        let count = 0;
+
+        btn.addEventListener('click', () => {
+            if (count === 0) {
+                img.style.display = 'none';
+                fac.style.display = 'none';
+                table.style.display = 'block';
+                tab();
+                btn.textContent = 'Factorial';
+                count = 1;
+            } else if (count === 1) {
+                img.style.display = 'none';
+                fac.style.display = 'block';
+                table.style.display = 'none';
+                generateFac();
+                btn.textContent = 'Aryabatta';
+                count = 2;
+            } else if (count === 2) {
+                img.style.display = 'block';
+                fac.style.display = 'none';
+                table.style.display = 'none';
+                btn.textContent = 'Table';
+                count = 0;
+            }
+        });
+
+        const tab = () => {
+            table.innerHTML = '';
+            for (let i = 1; i < 11; i++) {
+                let a = document.createElement('p');
+                a.textContent = `2 * ${i} = ${2 * i}`;
+                table.appendChild(a);
+            }
+        }
+
+        const generateFac = () => {
+            fac.innerHTML = '';
+            for (let i = 1; i < 6; i++) {
+                let p = document.createElement('p');
+                p.textContent = `Factorial of ${i} = ${factorial(i)}`;
+                fac.appendChild(p);
+            }
+        }
+
+        const factorial = (n) => {
+            if (n === 0 || n === 1) {
+                return 1;
+            } else {
+                return n * factorial(n - 1);
+            }
+        }
+    </script>
+</body>
+</html>
